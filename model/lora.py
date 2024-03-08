@@ -4,7 +4,7 @@ from .quantization import *
 
 class LoraQuantizedLinear(torch.nn.Module):
 
-    def __init__(self, q_linear, lora_r=32, lora_alpha=32, lora_dropout_rate=0.0):
+    def __init__(self, q_linear, lora_r=32, lora_alpha=32, lora_dropout_rate=0.1):
         super().__init__()
 
         self.lora_r = lora_r
