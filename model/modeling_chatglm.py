@@ -1006,6 +1006,7 @@ class ChatGLMForConditionalGeneration(ChatGLMPreTrainedModel):
         content = ""
         history = deepcopy(history)
         if "<|assistant|>" not in output:
+            history.append({"role": "assistant", "metadata": '', "content": output.strip()})
             return output, history
         for response in output.split("<|assistant|>"):
             metadata, content = response.split("\n", maxsplit=1)
